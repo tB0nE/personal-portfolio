@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Terminal, PenTool, Database, Cpu, ChevronRight, Github, Linkedin } from 'lucide-react';
+import { Terminal, PenTool, Database, Cpu, ChevronRight, Github, Linkedin, Palette } from 'lucide-react';
 import styles from './LandingPage.module.css';
 
 const LandingPage: React.FC = () => {
@@ -103,6 +103,9 @@ const LandingPage: React.FC = () => {
         </a>
         <a href="https://www.linkedin.com/in/tyrone-hattingh-84720957/" target="_blank" rel="noreferrer">
           <Linkedin size={24} />
+        </a>
+        <a href="https://www.deviantart.com/negative-chi" target="_blank" rel="noreferrer">
+          <Palette size={24} />
         </a>
       </footer>
     </div>

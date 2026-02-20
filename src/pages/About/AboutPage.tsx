@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Palette } from 'lucide-react';
 import styles from './AboutPage.module.css';
 import profilePic from '../../assets/profile.jpg';
 
@@ -54,6 +54,9 @@ const AboutPage: React.FC = () => {
           </a>
           <a href="https://www.linkedin.com/in/tyrone-hattingh-84720957/" target="_blank" rel="noreferrer" className="btn-primary">
             <Linkedin size={18} /> LinkedIn
+          </a>
+          <a href="https://www.deviantart.com/negative-chi" target="_blank" rel="noreferrer" className="btn-primary">
+            <Palette size={18} /> DeviantArt
           </a>
         </div>
       </section>
