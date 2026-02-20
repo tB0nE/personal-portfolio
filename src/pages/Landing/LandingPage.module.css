@@ -173,40 +173,10 @@
   gap: 0.8rem;
 }
 
-.trustBar {
-  display: flex;
-  justify-content: space-around;
-  padding: 4rem 2rem;
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 2px solid var(--border);
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.statNum {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--text-main);
-}
-
-.statLabel {
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-
 .socialFooter {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin-top: -4rem;
   padding-bottom: 4rem;
 }
 
@@ -230,10 +200,5 @@
   
   .heroActions {
     flex-direction: column;
-  }
-  
-  .trustBar {
-    flex-direction: column;
-    gap: 3rem;
   }
 }

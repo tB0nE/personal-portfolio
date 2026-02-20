@@ -80,22 +80,6 @@ const LandingPage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* Trust Bar */}
-      <section className={styles.trustBar}>
-        <div className={styles.stat}>
-          <span className={styles.statNum}>20+</span>
-          <span className={styles.statLabel}>Years of Code</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statNum}>1M+</span>
-          <span className={styles.statLabel}>Users Served</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statNum}>1</span>
-          <span className={styles.statLabel}>Published Comic</span>
-        </div>
-      </section>
-
       {/* Social Links */}
       <footer className={styles.socialFooter}>
         <a href="https://github.com/tB0nE" target="_blank" rel="noreferrer">
