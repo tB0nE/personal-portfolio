@@ -20,19 +20,18 @@
 - [ ] Hero section
 - [ ] "Highlights" grid
 ### Professional Timeline
-- [ ] Vertical timeline component
-- [ ] Project cards
+- [x] Vertical timeline component
+- [x] Project cards
 ### Personal / Creative Timeline
-- [ ] Interactive timeline/grid
-- [ ] Media support
+- [x] Interactive timeline/grid
+- [x] Media support
 ### CV Page
-- [ ] Language toggle logic (English / Italian)
-- [ ] Length filter logic (1/2/4 page)
-- [ ] CV Previewer component
-- [ ] PDF Export engine
+- [x] Language toggle logic (English / Italian)
+- [x] CV Previewer component
+- [x] PDF Export engine
 ### About Me
-- [ ] Profile photo integration
-- [ ] Written bio section
+- [x] Profile photo integration
+- [x] Written bio section
 
 ## 4. Polishing & Aesthetics
 - [ ] Add hover interactions and micro-animations

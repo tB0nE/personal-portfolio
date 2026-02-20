@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     { name: 'Home', path: '/', icon: Home },
     { name: 'Professional', path: '/professional', icon: Briefcase },
     { name: 'Creative', path: '/creative', icon: Palette },
-    { name: 'CV', path: '/cv', icon: FileText },
+    { name: 'Download CV', path: '/cv', icon: FileText },
     { name: 'About', path: '/about', icon: User },
   ];
 

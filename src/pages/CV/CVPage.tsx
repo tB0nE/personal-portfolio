@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Languages, FileText, Loader2 } from 'lucide-react';
+import { Download, Languages, Loader2 } from 'lucide-react';
 import { pdf } from '@react-pdf/renderer';
 import { saveAs } from 'file-saver';
 import { cvDataEn, cvDataIt } from '../../data/cvData';

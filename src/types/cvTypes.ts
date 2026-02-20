@@ -5,12 +5,15 @@ export interface Experience {
   description: string;
   bullets: string[];
   technologies: string[];
+  images?: string[];
 }
 
 export interface Project {
   title: string;
   description: string;
   technologies?: string[];
+  images?: string[];
+  year?: string;
 }
 
 export interface CVData {

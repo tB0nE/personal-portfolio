@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
 import styles from './AboutPage.module.css';
 import profilePic from '../../assets/profile.jpg';
 
