@@ -15,7 +15,7 @@ const CVPage: React.FC = () => {
   const handleDownload = async () => {
     try {
       setIsGenerating(true);
-      const doc = <CVDocument data={data} />;
+      const doc = <CVDocument data={data} language={language} />;
       const blob = await pdf(doc).toBlob();
       saveAs(blob, `Tyrone_Hattingh_CV_${language}.pdf`);
     } catch (error) {
@@ -24,6 +24,18 @@ const CVPage: React.FC = () => {
     } finally {
       setIsGenerating(false);
     }
+  };
+
+  const t = {
+    exp: language === 'EN' ? 'Professional Experience' : 'Esperienza Professionale',
+    projects: language === 'EN' ? 'Selected Technical Projects' : 'Progetti Tecnici Selezionati',
+    skills: language === 'EN' ? 'Core Skills' : 'Competenze Principali',
+    lang: language === 'EN' ? 'Languages & Frameworks' : 'Linguaggi e Framework',
+    infra: language === 'EN' ? 'Infrastructure & Tools' : 'Infrastruttura e Strumenti',
+    edu: language === 'EN' ? 'Education' : 'Istruzione',
+    languages: language === 'EN' ? 'Languages' : 'Lingue',
+    interests: language === 'EN' ? 'Interests' : 'Interessi',
+    tech: language === 'EN' ? 'Technologies' : 'Tecnologie',
   };
 
   return (
@@ -52,7 +64,7 @@ const CVPage: React.FC = () => {
             ) : (
               <Download size={18} />
             )}
-            {isGenerating ? 'Generating...' : 'Download PDF'}
+            {isGenerating ? (language === 'EN' ? 'Generating...' : 'Generazione...') : 'Download PDF'}
           </button>
         </div>
       </header>
@@ -75,7 +87,7 @@ const CVPage: React.FC = () => {
         <div className="columns">
           <div className="mainColumn">
             <section className="section">
-              <h2>Professional Experience</h2>
+              <h2>{t.exp}</h2>
               {data.experience.map((exp, idx) => (
                 <div key={idx} className="experienceItem">
                   <div className="expHeader">
@@ -90,14 +102,14 @@ const CVPage: React.FC = () => {
                     ))}
                   </ul>
                   <p className="techStack">
-                    <strong>Technologies:</strong> {exp.technologies.join(', ')}
+                    <strong>{t.tech}:</strong> {exp.technologies.join(', ')}
                   </p>
                 </div>
               ))}
             </section>
 
             <section className="section">
-              <h2>Selected Technical Projects</h2>
+              <h2>{t.projects}</h2>
               <div className="projectsGrid">
                 {data.projects.map((proj, idx) => (
                   <div key={idx} className="projectItem">
@@ -111,19 +123,19 @@ const CVPage: React.FC = () => {
 
           <div className="sidebar">
             <section className="section">
-              <h2>Core Skills</h2>
+              <h2>{t.skills}</h2>
               <div className="skillGroup">
-                <h3>Languages & Frameworks</h3>
+                <h3>{t.lang}</h3>
                 <p>{data.coreSkills.languages.join(' • ')}</p>
               </div>
               <div className="skillGroup">
-                <h3>Infrastructure & Tools</h3>
+                <h3>{t.infra}</h3>
                 <p>{data.coreSkills.infrastructure.join(' • ')}</p>
               </div>
             </section>
 
             <section className="section">
-              <h2>Education</h2>
+              <h2>{t.edu}</h2>
               {data.education.map((edu, idx) => (
                 <div key={idx} className="eduItem">
                   <h4>{edu.degree} | {edu.year}</h4>
@@ -136,7 +148,7 @@ const CVPage: React.FC = () => {
             </section>
 
             <section className="section">
-              <h2>Languages</h2>
+              <h2>{t.languages}</h2>
               {data.languages.map((lang, idx) => (
                 <p key={idx}><strong>{lang.name}</strong> — {lang.level}</p>
               ))}
@@ -146,7 +158,7 @@ const CVPage: React.FC = () => {
             </section>
 
             <section className="section">
-              <h2>Interests</h2>
+              <h2>{t.interests}</h2>
               <ul className="bullets">
                 {data.interests.map((interest, idx) => (
                   <li key={idx}>{interest}</li>

@@ -119,102 +119,117 @@ const styles = StyleSheet.create({
 
 interface Props {
   data: CVData;
+  language: 'EN' | 'IT';
 }
 
-const CVDocument = ({ data }: Props) => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.header}>
-        <Text style={styles.name}>{data.name}</Text>
-        <Text style={styles.title}>{data.title}</Text>
-        <View style={styles.contactRow}>
-          <Text>{data.location}  •  {data.phone}  •  {data.email}</Text>
+const CVDocument = ({ data, language }: Props) => {
+  const t = {
+    exp: language === 'EN' ? 'Professional Experience' : 'Esperienza Professionale',
+    projects: language === 'EN' ? 'Selected Technical Projects' : 'Progetti Tecnici Selezionati',
+    skills: language === 'EN' ? 'Core Skills' : 'Competenze Principali',
+    lang: language === 'EN' ? 'Languages & Frameworks' : 'Linguaggi e Framework',
+    infra: language === 'EN' ? 'Infrastructure & Tools' : 'Infrastruttura e Strumenti',
+    edu: language === 'EN' ? 'Education' : 'Istruzione',
+    languages: language === 'EN' ? 'Languages' : 'Lingue',
+    interests: language === 'EN' ? 'Interests' : 'Interessi',
+    tech: language === 'EN' ? 'Technologies' : 'Tecnologie',
+  };
+
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <View style={styles.header}>
+          <Text style={styles.name}>{data.name}</Text>
+          <Text style={styles.title}>{data.title}</Text>
+          <View style={styles.contactRow}>
+            <Text>{data.location}  •  {data.phone}  •  {data.email}</Text>
+          </View>
         </View>
-      </View>
 
-      <Text style={styles.summary}>{data.summary}</Text>
+        <Text style={styles.summary}>{data.summary}</Text>
 
-      <View style={styles.columns}>
-        <View style={styles.mainColumn}>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Professional Experience</Text>
-            {data.experience.map((exp, i) => (
-              <View key={i} style={styles.expItem}>
-                <View style={styles.expHeader}>
-                  <Text style={styles.company}>{exp.company}</Text>
-                  <Text style={styles.period}>{exp.period}</Text>
+        <View style={styles.columns}>
+          <View style={styles.mainColumn}>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.exp}</Text>
+              {data.experience.map((exp, i) => (
+                <View key={i} style={styles.expItem}>
+                  <View style={styles.expHeader}>
+                    <Text style={styles.company}>{exp.company}</Text>
+                    <Text style={styles.period}>{exp.period}</Text>
+                  </View>
+                  <Text style={styles.role}>{exp.role}</Text>
+                  {exp.bullets.map((b, bi) => (
+                    <View key={bi} style={styles.bullet}>
+                      <Text style={styles.bulletPoint}>•</Text>
+                      <Text style={styles.bulletText}>{b}</Text>
+                    </View>
+                  ))}
+                  <Text style={styles.techStack}>
+                    {t.tech}: {exp.technologies.join(', ')}
+                  </Text>
                 </View>
-                <Text style={styles.role}>{exp.role}</Text>
-                {exp.bullets.map((b, bi) => (
-                  <View key={bi} style={styles.bullet}>
-                    <Text style={styles.bulletPoint}>•</Text>
-                    <Text style={styles.bulletText}>{b}</Text>
-                  </View>
-                ))}
-                <Text style={styles.techStack}>
-                  Technologies: {exp.technologies.join(', ')}
-                </Text>
-              </View>
-            ))}
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Selected Technical Projects</Text>
-            {data.projects.map((proj, i) => (
-              <View key={i} style={styles.projectItem}>
-                <Text style={styles.projectTitle}>{proj.title}</Text>
-                <Text>{proj.description}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-
-        <View style={styles.sidebar}>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Core Skills</Text>
-            <View style={styles.skillGroup}>
-              <Text style={styles.skillTitle}>Languages & Frameworks</Text>
-              <Text>{data.coreSkills.languages.join(' • ')}</Text>
+              ))}
             </View>
-            <View style={styles.skillGroup}>
-              <Text style={styles.skillTitle}>Infrastructure & Tools</Text>
-              <Text>{data.coreSkills.infrastructure.join(' • ')}</Text>
+
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.projects}</Text>
+              {data.projects.map((proj, i) => (
+                <View key={i} style={styles.projectItem}>
+                  <Text style={styles.projectTitle}>{proj.title}</Text>
+                  <Text>{proj.description}</Text>
+                </View>
+              ))}
             </View>
           </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Education</Text>
-            {data.education.map((edu, i) => (
-              <View key={i} style={styles.expItem}>
-                <Text style={styles.projectTitle}>{edu.degree} | {edu.year}</Text>
-                <Text>{edu.institution}</Text>
-                {edu.bullets.map((b, bi) => (
-                  <View key={bi} style={styles.bullet}>
-                    <Text style={styles.bulletPoint}>-</Text>
-                    <Text style={styles.bulletText}>{b}</Text>
-                  </View>
-                ))}
+          <View style={styles.sidebar}>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.skills}</Text>
+              <View style={styles.skillGroup}>
+                <Text style={styles.skillTitle}>{t.lang}</Text>
+                <Text>{data.coreSkills.languages.join(' • ')}</Text>
               </View>
-            ))}
-          </View>
+              <View style={styles.skillGroup}>
+                <Text style={styles.skillTitle}>{t.infra}</Text>
+                <Text>{data.coreSkills.infrastructure.join(' • ')}</Text>
+              </View>
+            </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Languages</Text>
-            {data.languages.map((lang, i) => (
-              <Text key={i}>{lang.name} — {lang.level}</Text>
-            ))}
-          </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.edu}</Text>
+              {data.education.map((edu, i) => (
+                <View key={i} style={styles.expItem}>
+                  <Text style={styles.projectTitle}>{edu.degree} | {edu.year}</Text>
+                  <Text>{edu.institution}</Text>
+                  {edu.bullets.map((b, bi) => (
+                    <View key={bi} style={styles.bullet}>
+                      <Text style={styles.bulletPoint}>-</Text>
+                      <Text style={styles.bulletText}>{b}</Text>
+                    </View>
+                  ))}
+                </View>
+              ))}
+            </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Interests</Text>
-            {data.interests.map((interest, i) => (
-              <Text key={i}>• {interest}</Text>
-            ))}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.languages}</Text>
+              {data.languages.map((lang, i) => (
+                <Text key={i}>{lang.name} — {lang.level}</Text>
+              ))}
+            </View>
+
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.interests}</Text>
+              {data.interests.map((interest, i) => (
+                <Text key={i}>• {interest}</Text>
+              ))}
+            </View>
           </View>
         </View>
-      </View>
-    </Page>
-  </Document>
-);
+      </Page>
+    </Document>
+  );
+};
 
 export default CVDocument;

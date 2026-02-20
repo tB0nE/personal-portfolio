@@ -17,8 +17,8 @@
 
 ## 3. Page Implementations
 ### Landing Page
-- [ ] Hero section
-- [ ] "Highlights" grid
+- [x] Hero section
+- [x] "Highlights" grid
 ### Professional Timeline
 - [x] Vertical timeline component
 - [x] Project cards
