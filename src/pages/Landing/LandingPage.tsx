@@ -72,7 +72,7 @@ const LandingPage: React.FC = () => {
             Blending narrative storytelling with AI-assisted 
             workflows and game development in Godot.
           </p>
-          <div className={styles.genreBadge}>Gritty Sci-Fi • Cyberpunk</div>
+          <div className={styles.genreBadge}>Art • AI • Comics • Storytelling</div>
           <Link to="/creative" className={styles.cardLink}>
             Creative Portfolio <ChevronRight size={18} />
           </Link>
