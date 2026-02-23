@@ -7,14 +7,13 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'Professional', path: '/professional', icon: Briefcase },
-    { name: 'Creative', path: '/creative', icon: Palette },
+    { name: 'Creative & AI', path: '/creative', icon: Palette },
     { name: 'Download CV', path: '/cv', icon: FileText },
     { name: 'About', path: '/about', icon: User },
   ];
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>TP</div>
       <div className={styles.navLinks}>
         {navItems.map((item) => (
           <NavLink

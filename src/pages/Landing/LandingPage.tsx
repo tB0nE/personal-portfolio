@@ -15,7 +15,6 @@ const LandingPage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.badge}>Senior Software Engineer</div>
           <h1 className={styles.title}>
             I build <span className={styles.accentText}>systems</span> <br />
             and tell <span className={styles.creativeText}>stories.</span>
