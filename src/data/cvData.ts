@@ -1,5 +1,13 @@
 import type { CVData } from '../types/cvTypes';
 
+// Import Professional Assets
+import paragonLogo from '../assets/paragon_logo_cut.webp';
+import paragonCrop from '../assets/paragon_crop.png';
+import mpesaCut from '../assets/m-pesa_cut.png';
+import group4cCut from '../assets/4c_group_cut.jpg';
+import cimsoCut from '../assets/cimso-cut.png';
+import cimsoWebCut from '../assets/cimsoweb_cut_2.png';
+
 export const cvDataEn: CVData = {
   name: "Tyrone Hattingh",
   title: "Senior Software Engineer",
@@ -27,7 +35,7 @@ export const cvDataEn: CVData = {
         "Maintained high production stability and low defect rates"
       ],
       technologies: ["React", "Python", "Django", "PostgreSQL", "Docker", "AWS"],
-      images: ["https://placehold.co/600x400?text=Paragon+Interface", "https://placehold.co/600x400?text=Impact+Dashboard"]
+      images: [paragonLogo, paragonCrop]
     },
     {
       company: "4C GROUP - VODACOM",
@@ -43,7 +51,7 @@ export const cvDataEn: CVData = {
         "Provided technical support and guidance within team"
       ],
       technologies: ["SQL", "React", "Java Spring", "API Mediation"],
-      images: ["https://placehold.co/600x400?text=API+Flows", "https://placehold.co/600x400?text=M-Pesa+Dashboard"]
+      images: [mpesaCut, group4cCut]
     },
     {
       company: "CIMSO DEVELOPMENT",
@@ -60,7 +68,7 @@ export const cvDataEn: CVData = {
         "Supported traffic spikes exceeding 100k users"
       ],
       technologies: ["Python", "web2py", "Angular", "Socket Communication", "Linux"],
-      images: ["https://placehold.co/600x400?text=Cimsoweb+v3", "https://placehold.co/600x400?text=Server+Architecture"]
+      images: [cimsoCut, cimsoWebCut]
     }
   ],
   projects: [
@@ -119,11 +127,9 @@ export const cvDataEn: CVData = {
 };
 
 export const cvDataIt: CVData = {
-  name: "Tyrone Hattingh",
+  ...cvDataEn,
   title: "Ingegnere del Software Senior",
   location: "Penne, Italia",
-  phone: "+39 351 373 4420",
-  email: "tyrone.hattingh@gmail.com",
   summary: "Ingegnere del software senior con oltre 20 anni di esperienza nella progettazione e fornitura di sistemi basati sul web nei settori dell'ospitalità, delle telecomunicazioni, del fintech e della sostenibilità. Esperto nell'intero ciclo di vita del software, tra cui progettazione dell'architettura, servizi backend, sviluppo frontend, implementazione dell'infrastruttura e supporto operativo. Comodo lavorando in autonomia o all'interno di piccoli team senior, con esperienza nel contribuire a sistemi che vanno dalle piattaforme startup alle API finanziarie che servono milioni di utenti in più paesi. Forte interesse per i moderni flussi di lavoro assistiti dall'IA e lo sviluppo tecnico creativo.",
   coreSkills: {
     languages: ["Python", "Django", "FastAPI", "JavaScript", "Node", "React", "MUI", "React Query", "React Hook Form"],
@@ -145,7 +151,7 @@ export const cvDataIt: CVData = {
         "Mantenuto un'elevata stabilità di produzione e bassi tassi di difettosità"
       ],
       technologies: ["React", "Python", "Django", "PostgreSQL", "Docker", "AWS"],
-      images: ["https://placehold.co/600x400?text=Paragon+Interface", "https://placehold.co/600x400?text=Impact+Dashboard"]
+      images: [paragonLogo, paragonCrop]
     },
     {
       company: "4C GROUP - VODACOM",
@@ -161,7 +167,7 @@ export const cvDataIt: CVData = {
         "Fornito supporto tecnico e guida all'interno del team"
       ],
       technologies: ["SQL", "React", "Java Spring", "Mediazione API"],
-      images: ["https://placehold.co/600x400?text=API+Flows", "https://placehold.co/600x400?text=M-Pesa+Dashboard"]
+      images: [mpesaCut, group4cCut]
     },
     {
       company: "CIMSO DEVELOPMENT",
@@ -178,7 +184,7 @@ export const cvDataIt: CVData = {
         "Supportato picchi di traffico superiori a 100.000 utenti"
       ],
       technologies: ["Python", "web2py", "Angular", "Comunicazione Socket", "Linux"],
-      images: ["https://placehold.co/600x400?text=Cimsoweb+v3", "https://placehold.co/600x400?text=Server+Architecture"]
+      images: [cimsoCut, cimsoWebCut]
     }
   ],
   projects: [
