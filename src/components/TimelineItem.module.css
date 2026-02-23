@@ -94,7 +94,7 @@
 }
 
 .techTag {
-  background: var(--background);
+  background: var(--surface);
   color: var(--text-muted);
   padding: 0.3rem 0.7rem;
   border-radius: var(--radius-sm);
