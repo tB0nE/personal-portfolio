@@ -50,9 +50,9 @@ const LandingPage: React.FC = () => {
             architectures.
           </p>
           <ul className={styles.tagList}>
-            <li><Database size={14} /> PostgreSQL</li>
-            <li><Cpu size={14} /> Python/Django</li>
             <li><Cpu size={14} /> React/TS</li>
+            <li><Cpu size={14} /> Python/Django</li>
+            <li><Database size={14} /> PostgreSQL</li>
           </ul>
           <Link to="/professional" className={styles.cardLink}>
             Career Timeline <ChevronRight size={18} />
