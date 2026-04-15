@@ -14,8 +14,15 @@ export interface Project {
   isCurrent?: boolean;
 }
 
-const getAssetUrl = (path: string) => {
-  return new URL(`../../assets/${path}`, import.meta.url).href;
+// Eagerly import all images from the assets folder to ensure they are hashed and bundled correctly
+const imageModules = import.meta.glob('../../assets/*.{png,jpg,jpeg,webp,svg}', { 
+  eager: true, 
+  import: 'default' 
+}) as Record<string, string>;
+
+const getAssetUrl = (filename: string) => {
+  const path = `../../assets/${filename}`;
+  return imageModules[path] || '';
 };
 
 export const projects: Project[] = [
