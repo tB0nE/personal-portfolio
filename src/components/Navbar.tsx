@@ -1,15 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, Briefcase, Palette, FileText, User } from 'lucide-react';
+import { Home, FolderGit2, FileText } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
-    { name: 'Professional', path: '/professional', icon: Briefcase },
-    { name: 'Creative & AI', path: '/creative', icon: Palette },
+    { name: 'Projects', path: '/projects', icon: FolderGit2 },
     { name: 'Download CV', path: '/cv', icon: FileText },
-    { name: 'About', path: '/about', icon: User },
   ];
 
   return (

@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Terminal, PenTool, Database, Cpu, ChevronRight, Github, Linkedin, Palette } from 'lucide-react';
+import { Github, Linkedin, Palette, MapPin, Mail, FolderGit2 } from 'lucide-react';
 import styles from './LandingPage.module.css';
+import profilePic from '../../assets/profile.jpg';
 
 const LandingPage: React.FC = () => {
   return (
@@ -10,72 +11,57 @@ const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <section className={styles.hero}>
         <motion.div 
+          className={styles.photoContainer}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className={styles.placeholderPhoto}>
+             <img src={profilePic} alt="Tyrone Hattingh" className={styles.profileImage} />
+          </div>
+        </motion.div>
+        
+        <motion.div 
           className={styles.heroContent}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className={styles.title}>
-            I build <span className={styles.accentText}>systems</span> <br />
-            and tell <span className={styles.creativeText}>stories.</span>
+            Hi, I'm <span className={styles.accentText}>Tyrone.</span>
           </h1>
           <p className={styles.lead}>
-            Over 20 years of experience architecting stable, high-scale systems 
-            balanced with a lifelong passion for gritty sci-fi and creative tech.
+            Senior Software & AI Engineer. 20+ years in tech and development, I architect high-scale systems and applications with a focus on stability and creative, aesthetically pleasing user experiences. I've held a lifelong passion for creating software, platforms, and stories.
           </p>
+
+          <div className={styles.skills}>
+            <span className={styles.skillsTitle}>Key Skills:</span>
+            <div className={styles.skillsList}>
+              <span>React</span>
+              <span>Python</span>
+              <span>Django</span>
+              <span>FastAPI</span>
+              <span>Docker</span>
+              <span>AWS</span>
+              <span>AI Engineering</span>
+            </div>
+          </div>
+
+          <div className={styles.obsessions}>
+            <span className={styles.obsessionTitle}>Current Obsessions:</span>
+            <span className={styles.obsessionText}>VR, Narrat Engine, & AI Manipulation</span>
+          </div>
+          
+          <div className={styles.contactChips}>
+            <span className={styles.chip}><MapPin size={16} /> Pescara, Italy</span>
+            <span className={styles.chip}><Mail size={16} /> tyrone.hattingh@gmail.com</span>
+          </div>
+
           <div className={styles.heroActions}>
-            <Link to="/professional" className="btn-primary">
-              View Professional Work
-            </Link>
-            <Link to="/creative" className={styles.secondaryBtn}>
-              Explore Creative Projects
+            <Link to="/projects" className={styles.primaryBtn}>
+              <FolderGit2 size={20} /> View Projects
             </Link>
           </div>
-        </motion.div>
-      </section>
-
-      {/* Split Identity Grid */}
-      <section className={styles.grid}>
-        <motion.div 
-          className={`${styles.card} ${styles.engineerCard}`}
-          whileHover={{ y: -10 }}
-        >
-          <div className={styles.cardHeader}>
-            <Terminal size={32} />
-            <h2>The Engineer</h2>
-          </div>
-          <p>
-            From hospitality platforms to financial APIs serving millions, 
-            I specialize in building stable, scalable, and maintainable 
-            architectures.
-          </p>
-          <ul className={styles.tagList}>
-            <li><Cpu size={14} /> React/TS</li>
-            <li><Cpu size={14} /> Python/Django</li>
-            <li><Database size={14} /> PostgreSQL</li>
-          </ul>
-          <Link to="/professional" className={styles.cardLink}>
-            Career Timeline <ChevronRight size={18} />
-          </Link>
-        </motion.div>
-
-        <motion.div 
-          className={`${styles.card} ${styles.creatorCard}`}
-          whileHover={{ y: -10 }}
-        >
-          <div className={styles.cardHeader}>
-            <PenTool size={32} />
-            <h2>The Creator</h2>
-          </div>
-          <p>
-            Creator of the gritty sci-fi comic <strong>FADE</strong>. 
-            Blending narrative storytelling with AI-assisted 
-            workflows and game development in Godot.
-          </p>
-          <div className={styles.genreBadge}>Art • AI • Comics • Storytelling</div>
-          <Link to="/creative" className={styles.cardLink}>
-            Creative Portfolio <ChevronRight size={18} />
-          </Link>
         </motion.div>
       </section>
 

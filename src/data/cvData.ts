@@ -11,7 +11,7 @@ import cimsoWebCut from '../assets/cimsoweb_cut_2.png';
 export const cvDataEn: CVData = {
   name: "Tyrone Hattingh",
   title: "Senior Software Engineer",
-  location: "Penne, Italy",
+  location: "Pescara, Italy",
   phone: "+39 351 373 4420",
   email: "tyrone.hattingh@gmail.com",
   summary: "Senior software engineer with 20+ years of experience designing and delivering web-based systems across hospitality, telecommunications, fintech, and sustainability sectors. Experienced across the full software lifecycle including architecture design, backend services, frontend development, infrastructure deployment, and operational support. Comfortable working autonomously or within small senior teams, with experience contributing to systems ranging from startup platforms to financial APIs serving millions of users across multiple countries. Strong interest in modern AI-assisted workflows and creative technical development.",
@@ -129,7 +129,7 @@ export const cvDataEn: CVData = {
 export const cvDataIt: CVData = {
   ...cvDataEn,
   title: "Ingegnere del Software Senior",
-  location: "Penne, Italia",
+  location: "Pescara, Italia",
   summary: "Ingegnere del software senior con oltre 20 anni di esperienza nella progettazione e fornitura di sistemi basati sul web nei settori dell'ospitalità, delle telecomunicazioni, del fintech e della sostenibilità. Esperto nell'intero ciclo di vita del software, tra cui progettazione dell'architettura, servizi backend, sviluppo frontend, implementazione dell'infrastruttura e supporto operativo. Comodo lavorando in autonomia o all'interno di piccoli team senior, con esperienza nel contribuire a sistemi che vanno dalle piattaforme startup alle API finanziarie che servono milioni di utenti in più paesi. Forte interesse per i moderni flussi di lavoro assistiti dall'IA e lo sviluppo tecnico creativo.",
   coreSkills: {
     languages: ["Python", "Django", "FastAPI", "JavaScript", "Node", "React", "MUI", "React Query", "React Hook Form"],
